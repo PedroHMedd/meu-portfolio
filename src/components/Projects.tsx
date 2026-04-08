@@ -1,33 +1,34 @@
-import { projects } from "../data/projects"
+"use client"
+import { motion } from "framer-motion"
+
+const projects = [
+  {
+    title: "Happy Idosos",
+    desc: "Plataforma com autenticação, API de localização e sistema de voluntariado.",
+  },
+  {
+    title: "Sistema Web Completo",
+    desc: "Aplicação com múltiplos usuários, banco relacional e integração.",
+  },
+]
 
 export default function Projects() {
   return (
-    <section id="projects" className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-2xl hover:border-purple-500 hover:scale-[1.02] transition">
-      <h2 className="text-3xl font-bold mb-10">Projetos</h2>
+    <section id="projects" className="py-24 max-w-6xl mx-auto px-6">
+      <h2 className="text-3xl font-bold mb-12 text-purple-400">
+        Projetos
+      </h2>
 
-      <div className="grid md:grid-cols-2 gap-6">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="p-6 border border-white/10 rounded-xl hover:border-white/30 transition"
+      <div className="grid md:grid-cols-2 gap-8">
+        {projects.map((p, i) => (
+          <motion.div
+            key={i}
+            whileHover={{ scale: 1.05, y: -5 }}
+            className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-purple-500 transition"
           >
-            <h3 className="text-xl font-semibold">{project.title}</h3>
-
-            <p className="text-gray-400 mt-2">
-              {project.description}
-            </p>
-
-            <div className="flex gap-2 mt-4 flex-wrap">
-              {project.tech.map((tech, i) => (
-                <span
-                  key={i}
-                  className="text-xs bg-white/10 px-2 py-1 rounded"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
+            <h3 className="text-xl font-semibold">{p.title}</h3>
+            <p className="text-gray-400 mt-4">{p.desc}</p>
+          </motion.div>
         ))}
       </div>
     </section>

@@ -11,8 +11,10 @@ import Projects from "@/components/Projects"
 import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 import Splash from "@/components/Splash"
-import ParticlesBackground from "@/components/ParticlesBackgroud"
+
+import ParticlesBackground from "@/components/ParticlesBackground"
 import CustomCursor from "@/components/CustomCursor"
+import ScrollReveal from "@/components/ScrollReveal"
 
 export default function Home() {
   const [loading, setLoading] = useState(true)
@@ -26,22 +28,31 @@ export default function Home() {
       {!loading && (
         <main className="bg-gradient-to-b from-black via-zinc-900 to-black text-white overflow-x-hidden">
 
-          <div className="fixed inset-0 -z-10 overflow-hidden">
-            <div className="absolute w-[900px] h-[900px] bg-purple-600 opacity-30 blur-[120px] top-[-300px] left-[-300px]" />
-            <div className="absolute w-[800px] h-[800px] bg-indigo-600 opacity-30 blur-[120px] bottom-[-300px] right-[-300px]" />
-            <div className="absolute w-[600px] h-[600px] bg-blue-500 opacity-20 blur-[100px] top-[40%] left-[30%]" />
-          </div>
+          <ParticlesBackground />
+          <CustomCursor />
 
           <Navbar />
 
           <div className="flex flex-col gap-32">
-            <ParticlesBackground />
-            <CustomCursor />
+
             <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Contact />
+
+            <ScrollReveal>
+              <About />
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <Skills />
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <Projects />
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <Contact />
+            </ScrollReveal>
+
           </div>
 
           <Footer />

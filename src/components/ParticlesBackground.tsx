@@ -1,7 +1,5 @@
 "use client"
-import { motion } from "framer-motion"  
 import { useEffect, useRef } from "react"
-
 
 export default function ParticlesBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -58,10 +56,5 @@ export default function ParticlesBackground() {
     animate()
   }, [])
 
-  return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 -z-10"
-    />
-  )
+  return <canvas ref={canvasRef} className="fixed inset-0 -z-10" />
 }

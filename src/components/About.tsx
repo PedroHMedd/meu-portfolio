@@ -18,17 +18,17 @@ export default function About() {
       {/* BLOCO PRINCIPAL */}
       <div className="border-l-2 border-purple-500 pl-6 space-y-6">
 
-        <p className="text-lg text-white font-medium">
+        <p className="transition hover:scale-[1.03] hover:text-white-400">
           Técnico em Informática para Internet pela ETEC Prof. Maria Cristina Medeiros,
           classificada entre as 31 melhores escolas públicas do Brasil.
         </p>
 
-        <p className="text-gray-400">
+        <p className="transition hover:scale-[1.03] hover:text-white-400" >
           Desenvolvedor com foco em back-end, APIs e construção de sistemas reais.
           Experiência prática com PHP, Node.js, MySQL e integração de serviços.
         </p>
 
-        <p className="text-gray-400">
+        <p className="transition hover:scale-[1.03] hover:text-white-400">
           Interesso-me por Python, inteligência artificial, LLMs, RAG e sistemas orientados a dados,
           aplicando lógica e matemática para resolver problemas complexos.
         </p>

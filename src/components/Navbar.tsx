@@ -12,7 +12,7 @@ export default function Navbar() {
         bg-white/5 backdrop-blur-xl border border-white/10">
 
         <span className="font-bold text-purple-400">
-          Pedro.dev
+          PH.dev
         </span>
 
         <div className="flex gap-4 text-sm">

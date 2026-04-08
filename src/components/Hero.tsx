@@ -1,49 +1,55 @@
 "use client"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex flex-col justify-center items-center text-center px-6">
+    <section className="min-h-screen flex items-center justify-center px-6">
 
-      {/* Glow */}
-      <div className="absolute w-[400px] h-[400px] bg-purple-600 opacity-30 blur-3xl rounded-full"></div>
+      <div className="grid md:grid-cols-2 items-center gap-12 max-w-6xl w-full">
 
-      {/* Nome */}
-      <motion.h1
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 to-indigo-500 bg-clip-text text-transparent"
-      >
-        Pedro Medeiros
-      </motion.h1>
+        {/* TEXTO */}
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+            <span className="bg-gradient-to-r from-purple-400 to-indigo-500 bg-clip-text text-transparent">
+              Pedro Medeiros
+            </span>
+          </h1>
 
-      {/* Headline (versão curta que criamos) */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
-        className="mt-6 text-gray-400 max-w-xl"
-      >
-        Desenvolvedor Full Stack com foco em back-end e sistemas reais.  
-        Experiência em APIs, bancos de dados e integração de serviços.
-      </motion.p>
+          <p className="mt-6 text-gray-400 max-w-md">
+            Backend • Data • AI • Systems <br /> 
+            Construindo soluções com foco em performance e inteligência.
+          </p>
+        </motion.div>
 
-      {/* Botões */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-        className="mt-8 flex gap-4"
-      >
-        <a href="#projects" className="px-6 py-3 bg-purple-600 rounded-xl hover:bg-purple-500 transition">
-          Ver Projetos
-        </a>
+        {/* FOTO */}
+        <motion.div
+          initial={{ opacity: 0, x: 60, scale: 0.9 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="flex justify-center"
+        >
+          <div className="relative">
 
-        <a href="#contact" className="px-6 py-3 border border-white/20 rounded-xl hover:bg-white/10 transition">
-          Contato
-        </a>
-      </motion.div>
+            {/* Glow atrás */}
+            <div className="absolute inset-0 bg-purple-600 opacity-20 blur-3xl rounded-full"></div>
+
+            <Image
+              src="/profile2.jpg"
+              alt="Pedro"
+              width={260}
+              height={260}
+              className="relative rounded-2xl border border-white/10 shadow-[0_0_40px_rgba(168,85,247,0.4)] object-cover"
+            />
+
+          </div>
+        </motion.div>
+
+      </div>
     </section>
   )
 }
